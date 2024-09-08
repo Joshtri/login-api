@@ -23,7 +23,7 @@ app.use(express.json());
 // );
 
 const allowedOrigins = [
-	"http://localhost:3000",
+	'http://localhost:3000',
 	`${process.env.ALLOW_ORIGIN_URL1}`,
 	// Add more allowed origins as needed
 ];
