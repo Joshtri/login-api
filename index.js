@@ -23,9 +23,8 @@ app.use(express.json());
 // );
 
 const allowedOrigins = [
-	'http://localhost:3000',
-	`${process.env.ALLOW_ORIGIN_URL1}`,
-	// Add more allowed origins as needed
+	"https://login-client-gamma.vercel.app",
+	// Add other allowed origins here
 ];
 
 const corsOptions = {
@@ -36,9 +35,9 @@ const corsOptions = {
 			callback(new Error("Not allowed by CORS")); // Reject the request
 		}
 	},
-	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Include more methods if needed
-	credentials: true, // Allow cookies to be sent and received
-	allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
+	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+	credentials: true,
+	allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));
