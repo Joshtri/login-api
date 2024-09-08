@@ -14,33 +14,15 @@ connection();
 
 // middlewares
 app.use(express.json());
-// app.use(
-// 	cors({
-// 		origin: "*",
-// 		methods: ["GET", "POST"],
-// 		credentials: true,
-// 	})
-// );
+app.use(
+	cors({
+		origin: "*",
+		methods: ["GET", "POST"],
+		credentials: true,
+	})
+);
 
-const allowedOrigins = [
-	"https://login-client-gamma.vercel.app",
-	// Add other allowed origins here
-];
 
-const corsOptions = {
-	origin: (origin, callback) => {
-		if (allowedOrigins.includes(origin) || !origin) {
-			callback(null, true); // Allow the request
-		} else {
-			callback(new Error("Not allowed by CORS")); // Reject the request
-		}
-	},
-	methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-	credentials: true,
-	allowedHeaders: ["Content-Type", "Authorization"],
-};
-
-app.use(cors(corsOptions));
 
 // routes
 app.use("/api/users", userRoutes);
