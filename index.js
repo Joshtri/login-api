@@ -2,7 +2,7 @@
 import "dotenv/config"; // Automatically loads environment variables
 import express from "express";
 import cors from "cors";
-import connection from "./db.js"; // Ensure file extensions are included in ES modules
+import connection from "./config/dbConfig.js"; // Ensure file extensions are included in ES modules
 import userRoutes from "./routes/user.route.js";
 import authRoutes from "./routes/auth.route.js";
 
